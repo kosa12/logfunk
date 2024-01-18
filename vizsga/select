@@ -1,0 +1,13 @@
+select :: Eq a => a -> [a] -> [a] -> [a]
+select a [] result = result
+select a (x:xs) result
+  | a == x    = select a xs result
+  | otherwise = select a xs (x:result)
+
+main :: IO ()
+main = do
+  let list = [1, 2, 3, 4, 3, 5]
+      elementToRemove = 3
+      result = select elementToRemove list []
+  putStrLn $ "Original list: " ++ show list
+  putStrLn $ "Element " ++ show elementToRemove ++ " removed: " ++ show result

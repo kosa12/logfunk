@@ -11,8 +11,8 @@ drop1 _ xs = xs
 main :: IO ()
 main = do
     let lista = [1, 1, 2]
-    let x = take1 4 lista
-        y = drop1 4 lista
+    let x = take1 1 lista
+        y = drop1 1 lista
     putStrLn $ "Take result: " ++ show x
     putStrLn $ "Drop result: " ++ show y
     putStrLn $ "Ossz:" ++ show (x ++ y)
